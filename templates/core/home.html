@@ -1,0 +1,167 @@
+{% extends 'base.html' %} {% block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head> 
+  <br>
+  <body class="bg-image-home">
+    <div class="bg-color-home">
+        <p class="font-3 text-center roboto"><b>Online Ration Service</b></p>
+        <p class="text-center font poppins fst-italic">Here is to remind your Ration is here! Wanna take a look</p>
+    </div>
+    <!-- carousel -->
+    <div class="container">
+    <section class="hero-section">
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="media/default/img4.jpg" height="850px" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="media/default/img2.jpg" height="850px" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="media/default/img5.jpg" height="850px" class="d-block w-100" alt="..." />
+          </div>
+          <div class="carousel-item">
+            <img src="media/default/img6.jpg" height="850px" class="d-block w-100" alt="..." />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </section>
+  </div>
+    <br>
+    <section>
+    <div class="container">
+      <div class="dropdown-center font roboto text-center">
+        <label>Choose Your Language :</label>
+        <button
+          class="btn btn-primary active dropdown-toggle font-1"
+          type="button"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        ><b><input placeholder="Select Language"></b>
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a class="dropdown-item link-active font-1 poppins" href="#"
+              ><b>English</b></a
+            >
+          </li>
+          <li>
+            <a class="dropdown-item link-active font-1 poppins" href="#"
+              ><b>Malayalam</b></a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+    <br />
+    <!-- card -->
+<section>
+    <div class="container py-5">
+      <p class="font text-center times"><b>SELECT YOUR CARD TYPE :-</b></p>
+      <hr>
+      <div class="row row-cols-md-4 g-4">
+        <div class="col">
+          <div class="card h-0">
+            <div class="card-body bg-light font">
+              <a href="{% url 'core:choose_action' %}"><b>White Card</b></a>
+              <p class="card-text roboto">
+                Non – Priority.
+              </p>
+            </div>
+        </div>
+        </div>
+        <div class="col">
+          <div class="card h-0">
+            <div class="card-body bg-warning font">
+              <a href="{% url 'core:choose_action' %}"><b>Yellow Card</b></a>
+              <p class="card-text roboto">
+                Most economically backward section of society. Antyodaya Anna
+                Yojana Beneficiaries.
+              </p>
+            </div>
+        </div>
+      </div>
+        <div class="col">
+          <div class="card h-0">
+            <div class="card-body bg-color-card font">
+              <a href="{% url 'core:choose_action' %}"><b>Pink Card</b></a>
+              <p class="card-text roboto">
+                Priority or Below Poverty Line (BPL).
+              </p>
+            </div>
+        </div>
+      </div>
+        <div class="col">
+          <div class="card h-0">
+            <div class="card-body bg-info font">
+              <a href="{% url 'core:choose_action' %}"><b>Blue Card</b></a>
+              <p class="card-text roboto">
+                Non – Priority subsidy or Above Poverty Line (APL).
+              </p>
+            </div>
+          </div>
+      </div>
+      </div>
+    </div>
+</section>
+<section>
+<div class="container py-5">
+    <p class="font text-center times"><b>BANK OFFERS</b></p>
+    <hr>
+    <div class="row row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card">
+          <img src="media/default/paytm.webp" alt="" height="400px"/></p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="media/default/kotak.webp" alt="" height="400px"/></p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="media/default/rbl.webp" alt="" height="400px"/></p>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <img src="media/default/exp.webp" alt="" height="400px"/></p>
+        </div>
+      </div>
+    </div>
+</div>
+</section>
+</body>
+</html>
+
+{% endblock content %}

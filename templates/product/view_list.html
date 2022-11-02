@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="container py-5">
+  <p class="font"><b>Available Product Details</b></p>
+  <div class="row row-cols-md-3 g-3">
+      {% for product in products %}
+      <div class="col">
+        <div class="card">
+          <img src="" class="card-img-top" alt="..." height="200px" />
+          <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">Price: {{product.price}}</p>
+            <p class="card-text overflow-hidden" style="height: 50px;">Available Quantity: {{product.quantity}}</p>
+            <p class="card-text text-muted fst-italic">
+              Last updated: {{product.updated_on|date}}
+            </p>
+          </div>
+      </div>
+      {% empty %}
+      <div class="col">
+          <p class="font">No Product Found</p>
+      </div>
+      {% endfor %}
+      </div>
+  </div>
+</div>
+  
+  {% endblock content %}

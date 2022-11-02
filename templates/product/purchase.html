@@ -1,0 +1,58 @@
+{% extends 'base.html' %} 
+{% block content %}
+<div class="container py-5">
+    <p class="font-4 poppins"><b>Select the Items You Want --></b></p>
+    <br>
+    <table class="table table-bordered align-middle font roboto">
+        <thead>
+            <tr>
+                <th>Sl No</th>
+                <th>Item                                                </th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>namekj</td>
+                <td><input type="number" class="form-control font "></td>
+                <td>price</td>
+                <td><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></td>
+            </tr>
+        </tbody>
+        <!-- <thead>
+            {% for product in products %}
+            <tr>
+                <th>Sl No</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.quantity}}</td>
+                <td>{{product.price}}</td>
+                <td><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></td>
+            </tr>
+            {% empty %}
+            <div class="col">
+                <p class="font">No Product Found</p>
+            </div>
+            {% endfor %}
+        </tbody> -->
+    </table>
+</div>
+<div class="container">
+    <p class="font text-end times">TOTAL AMOUNT = -----</p>
+</div>
+<div class="container text-center">
+    <a href="" ><button type="button" class="btn btn-primary font roboto">BUY NOW</button></a>
+</div>
+
+{% endblock content %}

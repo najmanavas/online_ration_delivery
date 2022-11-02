@@ -1,0 +1,44 @@
+{% extends "base.html" %} {% block content %}
+<!-- <div class="container py-5">
+  <div class="card">
+      <div class="card-body">
+          <div>
+              <h5 class="card-title">Enter the Details :-</h5>
+              <p class="card-text">Ration Card Number :</p>
+              <p class="card-text">Name :</p>
+              <p class="card-text">Phone Number :</p>
+              <p class="card-text">Enter OTP :</p>
+              <label class="btnprimary">0</label>
+              <label class="btnprimary">0</label>
+              <label class="btnprimary">0</label>
+              <label class="btnprimary">0</label>
+              <label class="btnprimary">0</label>
+          </div>
+          <div>
+              <label class="card-text" style="height: 50px;">For Biometric-Authentication : </label>
+              <label><i class="fa-regular fa-camera-retro"></i> |-----| </label>
+          </div>
+          <a href="{% url 'core:product_purchase' %}" ><button type="button" class="btn btn-info">Sign In</button></a>
+      </div>
+  </div>
+</div> -->
+{% extends "base.html" %} {% block content %}
+<div class="container-fluid bg-light vh-100">
+  <div class="row justify-content-center align-items-center h-100">
+    <div class="col-lg-6">
+      <div class="card shadow">
+        <div class="card-body">
+          <h1 class="card-title">Signup</h1>
+          <form action="" method="post">
+            {% csrf_token %} {{form.as_p}}
+            <div class="d-flex justify-content-between mb-3">
+              <a href="{% url 'user:user_login' %}" class="link-primary">Already have an account?</a>
+            </div>
+            <button class="btn btn-primary">Signup</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

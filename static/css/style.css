@@ -1,0 +1,89 @@
+.text-justify{
+    text-align: justify;
+}
+/* navbar */
+.bg-color{
+    background-color: rgba(120, 133, 129, 0.755);
+}
+
+/* card */
+.bg-color-card{
+    background-color: rgb(233, 166, 177);
+}
+.card:hover{
+    cursor: pointer;
+    border-color: black;
+    border-radius: 0px;
+}
+
+/* background image */
+.bg-image-home{
+    background-image: url(images.jpg);
+    background-size: cover;
+}
+.bg-image-about{
+    background-image: url(about.jpeg);
+    background-size: cover;
+}
+.bg-image-action{
+    background-image: url(images.jpg);
+}
+
+.color-primary{
+    color:rgb(27, 94, 239);
+    font-size: 28px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.color-primary:hover{
+    color:white;
+    cursor: default;
+}
+.pink{
+    color: rgb(238, 106, 243);
+}
+.times{
+    font-family: 'Times New Roman', Times, serif;
+}
+.font{
+    font-size: 24px;
+}
+.font-1{
+    font-size: 16px;
+}
+.font-2{
+    font-size: 32px;
+}
+.font-3{
+    font-size: 36px;
+}
+.font-4{
+    font-size: 28px;
+}
+.font-5{
+    font-size: 20px;
+}
+.font-6{
+    font-size: 26px;
+}
+.roboto{
+    font-family: 'Roboto', sans-serif;
+}
+.poppins{
+    font-family: 'Poppins', sans-serif;
+}
+.h-0{
+    height: 250px;
+}
+.input{
+    width: 50px;
+    height: 50px;
+}
+
+.footer{
+    background-color: rgb(154, 152, 152);
+    color: whitesmoke;
+    
+}
+.u{
+    text-decoration: none;
+}

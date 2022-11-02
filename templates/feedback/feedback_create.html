@@ -1,0 +1,36 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<div class="container py-5 font">
+  <div class="row">
+    <div class="col">
+      <h1 class="font-3 times"><b>Feedback Form</b></h1>
+      <p class="text-justify roboto">
+        <br>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est nostrum
+        dolores alias, nobis laborum obcaecati tempore omnis porro tempora
+        impedit labore, quas eum exercitationem dicta. Veritatis iusto
+        consectetur nesciunt nulla provident ipsum sunt ut error maxime ab
+        nostrum praesentium, amet odio esse mollitia vel porro? Ullam hic quae
+        saepe tenetur minima, dolorum deserunt laborum veritatis quas temporibus
+      </p>
+    </div>
+    <div class="col">
+      <div class="card">
+        <div class="card-body times">
+          <form action="" method="post">
+            {% csrf_token %}
+            <table>
+                <tbody>
+                    {{form.as_p}}
+                </tbody>
+            </table>
+            <button class="btn btn-primary" type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
