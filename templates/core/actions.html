@@ -6,7 +6,8 @@
             <tr>
                 <td class="font-2 poppins"><b>CARD TYPE :- ------------</b></td>
                 <td><a href="{% url 'core:product_purchase' %}"><button type="button" class="btn btn-primary font roboto">Purchase Item</button></a></td>
-<!--offcanvas--><td><a 
+                  <!--offcanvas-->
+                <td><a 
                   data-bs-toggle="offcanvas"
                   href="#offcanvasExample"
                   aria-controls="offcanvasExample"
@@ -29,7 +30,7 @@
       <div class="offcanvas-body">
         <div class="card font poppins">
           <div class="card-body">
-            <div class="card-text"><a href="" class="u">
+            <div class="card-text"><a href="{% url 'core:card_details' %}" class="u">
               <p>View Ration-Card details</a></p>
             </div>
           </div>

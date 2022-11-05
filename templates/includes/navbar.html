@@ -1,6 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-color">
   <div class="container-fluid">
-    <a class="navbar-brand color-primary p-3" href="#"><b>ORD</b></a>
+    <img src="logo1.png" class="navbar-brand" />
+    <a class="navbar-brand color-primary p-4" href="#"><b>ORD</b> </a>
     <button
       class="navbar-toggler"
       type="button"
@@ -16,30 +17,52 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a
-            class="nav-link link-light active font-4 times"
+            class="nav-link link-light active font-4 poppins"
             aria-current="page"
             href="{% url 'core:home' %}"
-            >Home</a
+            ><b>Home</b></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link link-light active font-4 times" href="{% url 'core:feedback_list' %}"
-            >Feedback</a
+          <a
+            class="nav-link link-light active font-4 poppins"
+            href="{% url 'core:feedback_list' %}"
+            ><b>Feedback</b></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link link-light active font-4 times" href="{% url 'core:about_us' %}"
-            >About US</a
+          <a
+            class="nav-link link-light active font-4 poppins"
+            href="{% url 'core:about_us' %}"
+            ><b>About US</b></a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link active font times" href="{% url 'core:product_delivery' %}"
+          <a
+            class="nav-link active font poppins"
+            href="{% url 'core:product_delivery' %}"
             >Delivery</a
           >
         </li>
         <li class="nav-item">
-          <a class="nav-link active font times" href="{% url 'core:product_summary' %}"
+          <a
+            class="nav-link active font poppins"
+            href="{% url 'core:product_summary' %}"
             >summary</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link link-light active font-4 poppins"
+            href="{% url 'core:profile' %}"
+            ><b>Profile</b></a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link link-light active font-4 poppins"
+            href="{% url 'core:payment' %}"
+            ><b>Payment</b></a
           >
         </li>
       </ul>

@@ -18,7 +18,7 @@
 
 /* background image */
 .bg-image-home{
-    background-image: url(images.jpg);
+    background-image: url(home.jpeg);
     background-size: cover;
 }
 .bg-image-about{
@@ -28,18 +28,36 @@
 .bg-image-action{
     background-image: url(images.jpg);
 }
+.bg-image-fdb{
+    background-image: url(fb.jpg);
+    background-size: cover;
+}
+
+.fb-image{
+    background-image: url(fb-body.jpeg);
+    background-size:cover ;
+}
+
+.bg-summary{
+    background-image: url(summary.jpeg);
+    background-size: cover;
+}
+
+.bg-card{
+    background-image: url(card.jpeg);
+    background-size: cover;
+}
+
+
 
 .color-primary{
-    color:rgb(27, 94, 239);
-    font-size: 28px;
-    font-family: 'Times New Roman', Times, serif;
+    color: rgba(240, 189, 94, 0.928);
+    font-size: 32px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .color-primary:hover{
-    color:white;
+    color:rgba(240, 189, 94, 0.928);
     cursor: default;
-}
-.pink{
-    color: rgb(238, 106, 243);
 }
 .times{
     font-family: 'Times New Roman', Times, serif;
@@ -86,4 +104,20 @@
 }
 .u{
     text-decoration: none;
+}
+.black{
+    color: black;
+}
+.white{
+    color: white;
+}
+
+.button{
+    background-color: rgb(39, 37, 37);
+    color: whitesmoke;
+}
+/* fb */
+
+.fb-name{
+    color: aliceblue;
 }

@@ -1,41 +1,64 @@
-{% extends 'base.html' %}
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 
 <div class="container py-5">
-    <div class="position-relative m-4">
-        <div class="progress" style="height: 1px;">
-          <div class="progress-bar" role="progressbar" aria-label="Progress" style="width: 0%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="position-relative m-4">
+    <div class="progress" style="height: 1px">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        aria-label="Progress"
+        style="width: 0%"
+        aria-valuenow="50"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      ></div>
+    </div>
+    <button
+      type="button"
+      class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill"
+      style="width: 2rem; height: 2rem"
+    >
+      1
+      <p class="text-black p-2"><b>Delivery</b></p>
+    </button>
+    <button
+      type="button"
+      class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-secondary rounded-pill"
+      style="width: 2rem; height: 2rem"
+    >
+      2
+      <p class="text-muted p-2"><b>payment</b></p>
+    </button>
+    <button
+      type="button"
+      class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill"
+      style="width: 2rem; height: 2rem"
+    >
+      3
+      <p class="text-muted p-2"><b>Summary</b></p>
+    </button>
+  </div>
+  <br />
+  <div>
+    <a href="{% url 'core:add_address' %}"
+      ><label class="font times"
+        ><i class="fa-solid fa-plus"></i>ADD NEW ADDRESS</label
+      ></a
+    >
+  </div>
+  <br />
+  <div class="card">
+    <div class="card-body">
+      <div class="card-title font times">
+        <p><b>Name </b></p>
+        <div class="card-text times font-5">
+          <p>Address</p>
+          <p>Phone Number</p>
+          <button class="btn btn-info grey font-1" type="button">EDIT</button>
         </div>
-        <button type="button" class="position-absolute top-0 start-0 translate-middle btn btn-sm btn-primary rounded-pill" style="width: 2rem; height:2rem;">1</button>
-        <button type="button" class="position-absolute top-0 start-50 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">2</button>
-        <button type="button" class="position-absolute top-0 start-100 translate-middle btn btn-sm btn-secondary rounded-pill" style="width: 2rem; height:2rem;">3</button>
+      </div>
     </div>
-    <br>
-    <div>
-        <a href="{% url 'core:add_address' %}"><label class="font times"><i class="fa-solid fa-plus"></i>ADD NEW ADDRESS</label></a>
-    </div>
-    <br>
-    <div class="card">
-        <div class="card-body">
-            <div class="card-title font times">
-                <p><b>Name </b></p>
-                <div class="card-text times font-5">
-                    <p>Address </p>
-                    <p>Phone Number </p>
-                    <button class="btn btn-light pink font-1" type="button">EDIT</button>
-                </div>
-            </div>
-        </div>        
-    </div>
+  </div>
 </div>
-
-
-
-
-
-
-
-
-
 
 {% endblock content %}

@@ -1,32 +1,46 @@
 {% extends "base.html" %} {% block content %}
 
-<section class="py-5">
+<section class="py-5 fb-image">
   <div class="container">
     <div class="row">
-        <div class="col">
-            <h2 class="text-center font-3 poppins">Feedbacks</h2>
-            <hr>
-        </div>
-        <div class="col text-end">
-          <a href="{% url 'core:feedback_create'%}"><button class="btn btn-warning font fst-italic roboto" type="button">Add Your Feedback</button></a>
-        </div>
+      <div class="col">
+        <h2 class="text-center font-3 poppins">Feedbacks</h2>
+        <hr />
+      </div>
+      <div class="col text-end">
+        <a href="{% url 'core:feedback_create'%}"
+          ><button
+            class="btn btn-warning font-1 fst-italic poppins"
+            type="button"
+          >
+            <b>Add Your Feedback</b>
+          </button></a
+        >
+      </div>
     </div>
     {% for feedback in feedbacks %}
     <div class="row">
       <div class="col">
-        <div class="card">
-          <h5 class="card-header font bg-secondary times">{{feedback.name}}</h5>
+        <div class="card bg-image-fdb">
+          <h3 class="card-header bg-secondary fb-name times">
+            {{feedback.name}}
+          </h3>
           <div class="card-body">
-            <p class="card-text text-muted fst-italic">{{feedback.updated_on|date}}</p>
-            <h5 class="card-title font times">{{feedback.subject}}</h5>
+            <p class="card-text text-muted fst-italic">
+              {{feedback.updated_on|date}}
+            </p>
             <p class="card-text font poppins">{{feedback.message}}</p>
             <div class="d-flex justify-content-evenly">
-            <button class="btn btn-secondary font-1"><i class="fa-regular fa-thumbs-up"></i> Helpful</button>
-            <button class="btn btn-secondary font-1"><i class="fa-regular fa-thumbs-down"></i> Not Helpful</button>
+              <button class="btn btn-info font-1">
+                <i class="fa-regular fa-thumbs-up"></i> Helpful
+              </button>
+              <button class="btn btn-dark font-1">
+                <i class="fa-regular fa-thumbs-down"></i> Not Helpful
+              </button>
             </div>
           </div>
         </div>
-        <br>
+        <br />
         {% empty %}
         <p class="card-text">No feedbacks!</p>
         {% endfor %}

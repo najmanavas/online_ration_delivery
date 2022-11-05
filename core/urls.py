@@ -19,4 +19,11 @@ urlpatterns=[
     path("add_address/",views.AddAddressView.as_view(),name="add_address"),
     # product summary
     path("product_summary/",views.ProductSummaryView.as_view(),name="product_summary"),
+    # card details
+    path("card_details/",views.CardDetailView.as_view(),name="card_details"),
+    # profile
+    path("profile/",views.ProfileView.as_view(),name="profile"),
+    path("about_me/",views.AboutMeView.as_view(),name="add_details"),
+    # payment
+    path("payment/",views.PaymentView.as_view(),name="payment"),
 ]
