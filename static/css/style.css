@@ -1,3 +1,6 @@
+* {
+    box-sizing: border-box;
+  }
 .text-justify{
     text-align: justify;
 }
@@ -5,17 +8,11 @@
 .bg-color{
     background-color: rgba(120, 133, 129, 0.755);
 }
-
-/* card */
-.bg-color-card{
-    background-color: rgb(233, 166, 177);
-}
 .card:hover{
     cursor: pointer;
     border-color: black;
     border-radius: 0px;
 }
-
 /* background image */
 .bg-image-home{
     background-image: url(home.jpeg);
@@ -48,7 +45,10 @@
     background-size: cover;
 }
 
-
+.bg-delivery{
+    background-image: url(delivery.jpeg);
+    background-size: cover;
+}
 
 .color-primary{
     color: rgba(240, 189, 94, 0.928);
@@ -58,6 +58,14 @@
 .color-primary:hover{
     color:rgba(240, 189, 94, 0.928);
     cursor: default;
+}
+/* rationcard */
+.card-bg{
+    background-image: url(card1.jpeg);
+    background-size: cover;
+}
+.form-control{
+    height: 40px;
 }
 .times{
     font-family: 'Times New Roman', Times, serif;
@@ -83,6 +91,9 @@
 .font-6{
     font-size: 26px;
 }
+.font-7{
+    font-size: 14px;
+}
 .roboto{
     font-family: 'Roboto', sans-serif;
 }
@@ -91,6 +102,9 @@
 }
 .h-0{
     height: 250px;
+}
+.ms-6{
+    margin-left: 100px;
 }
 .input{
     width: 50px;
@@ -101,12 +115,16 @@
     background-color: rgb(154, 152, 152);
     color: whitesmoke;
     
+    
 }
 .u{
     text-decoration: none;
 }
 .black{
     color: black;
+}
+.cl-black{
+    color: rgb(0, 9, 86);
 }
 .white{
     color: white;
@@ -120,4 +138,43 @@
 
 .fb-name{
     color: aliceblue;
+}
+
+/* login page */
+.gradient-custom {
+    /* fallback for old browsers */
+    background: #b88ce7;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgb(190, 145, 239), rgb(123, 158, 219));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgb(167, 118, 220), rgb(146, 178, 234))
+    }
+
+
+/* profile */
+.gradient-profile{
+    background: #3e6e08;
+
+    background: -webkit-linear-gradient(to right,rgba(120, 133, 129, 0.755), rgba(141, 174, 164, 0.755));
+    
+    background: linear-gradient(to right, rgba(149, 168, 162, 0.755), rgba(148, 207, 189, 0.755))
+}
+
+.position{
+    right: 20px;
+}
+
+
+/* Messages */
+.messages{
+    position: fixed;
+    right: 16px;
+    top: 75px;
+    z-index: 10;
+    width: max-content;
+}
+.w{
+    width: 50px;
 }

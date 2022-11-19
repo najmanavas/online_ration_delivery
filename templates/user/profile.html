@@ -39,15 +39,23 @@
               <a
                 class="nav-link link-light active font-4 poppins"
                 aria-current="page"
-                href="{% url 'core:profile' %}"
+                href="#"
                 ><b>Profile</b></a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link link-light active font-4 poppins"
+                aria-current="page"
+                href="{% url 'core:home' %}"
+                ><b>Home</b></a
               >
             </li>
           </ul>
           <div class="nav-item text-end">
             <a
               class="nav-link link-light active poppins"
-              href="{% url 'core:add_details' %}"
+              href="{% url 'user:profile_update' %}"
               ><button class="btn button font-4"><b>EDIT PROFILE</b></button></a
             >
           </div>
@@ -55,41 +63,151 @@
       </div>
     </nav>
     <!-- body -->
-    <div class="container py-5 font times">
-      <img src="" />
-      <div class="card">
-        <div class="card-title p-3">
-            <i class="fa-regular fa-user"></i>
-          <label><b>Name</b></label>
-          <div class="card-body">
-            <p>Place</p>
-            <p>State</p>
+    <section class="gradient-custom-2" style="min-height:100vh">
+      <div>
+        <a href="{% url 'core:home' %}">
+          <h1 class="poppins text-center text-white pt-5">PlayR</h1>
+        </a>
+      </div>  
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-lg-9 col-xl-7">
+            <div class="card">
+              <div
+                class="rounded-top text-white d-flex flex-row"
+                style="background-color: #000; height: 200px"
+              >
+                <div class="ms-4 mt-5 d-flex flex-column" style="width: 150px">
+                  {% if user.profilemodel %}
+                  <img
+                    src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                    alt="Generic placeholder image"
+                    class="img-fluid img-thumbnail mt-4 mb-2"
+                    style="width: 150px; z-index: 1"
+                  />
+                  
+                  <button
+                    type="button"
+                    class="btn btn-outline-dark"
+                    data-mdb-ripple-color="dark"
+                    style="z-index: 1"
+                  >
+                    <a href="{% url 'user:profile_update' user.profilemodel.id %}">Edit profile
+                  </button></a>
+                </div>
+                <div class="ms-3" style="margin-top: 130px">
+                  <h5 class="text-capitalize">{{user.profilemodel.user}}</h5>
+                  <p>{{user.profilemodel.city}}Kochi</p>
+                </div>
+              </div>
+              <div class="p-4 text-black" style="background-color: #f8f9fa">
+                <div class="d-flex justify-content-end text-center py-1">
+                  <div class="mx-3">
+                    <p class="mb-1 h5"><i class="fa-regular fa-heart"></i></p>
+                    <p class="small text-muted mb-0">Favourites</p>
+                  </div>              
+                  <div lass="mx-3">
+                    <p class="mb-1 h5">478</p>
+                    <p class="small text-muted mb-0">Following</p>
+                  </div>
+                </div>
+              </div>
+                <div class="card-body p-4 text-black">
+                  <div class="mb-5">
+                    <p class="lead fw-normal mb-1">About</p>
+                    <div class="p-4" style="background-color: #f8f9fa">
+                      <p class="font-italic mb-1 text-capitalize">
+                        First_name : {{user.profilemodel.first_name}}</p>
+                      <p class="font-italic mb-1 text-capitalize">
+                        Last_name : {{user.profilemodel.last_name}}</p>
+                      <p class="font-italic mb-1 text-capitalize">
+                        Gender : {{user.profilemodel.gender}}</p>
+                      <p class="font-italic mb-1">
+                        phone_number : {{user.profilemodel.phone_number}}</p>
+                      
+                    </div>
+                 
+                  </div> 
+                  {% else %}
+                    <tr>
+                      <td colspan="4">
+                        <a href="{% url 'user:profile_create' %}" class="text-light">
+                        Create Profile
+                        </a>
+                      </td>
+                    </tr>             
+                  {% endif %}                    
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <br />
-      <div class="card">
-        <div class="card-title p-3">
-          <p><b>About Me</b></p>
-          <a href="{% url 'core:add_details' %}"
-            ><button type="button" class="btn btn-info times">
-              ADD DETAILS
-            </button></a
-          >
+    </section>
+<!-- <div class="container py-5">    
+  <section class="hero-section">
+    <div class="card-group mt-2" >
+      <div class="card ms-1 gradient-custom text-center text-white font roboto pt-4" style="height: 800px;">
+        <div class="card-body">
+          <div class="card" style="width: 200px;" ><p><i class="fa-regular fa-user fa-3x mt-5 text-black"></i>
+                <a href=""><i class="fa-solid fa-camera-retro"></i></a></p>
+          </div><br>
+          <div class="card-text">
+            <h5>Name : {{profile.name}}</h5>
+            <p>Address: {{profile.address}}</p>
+            <p class="text-start">Card Type: {{profile.card_type}}</p>
+            <div class="d-flex justify-content-center">
+              <plabel><a href="{% url 'user:profile_update' %}" class="u">Edit</a></label>
+              <a href="{% url 'user:profile_update' %}"><i class="far fa-edit"></i></a>
+            </div>
+          </div>
         </div>
       </div>
-      <br />
-      <div class="card">
-        <div class="card-title p-3">
-          <p><b>My Activity</b></p>
-          <a href=""
-            ><button type="button" class="btn btn-info times">
-              VIEW DETAILS
-            </button></a
-          >
+      <div class="card  pt-4">
+        <div class="card-body">
+          <h5 class="card-title p-2 font-6 times">Personal Information</h5><hr>
+          <div class="card-text">
+            <div class="row pt-1">
+              <div class="col-6 mb-3">
+                  <h6 class="font ">Email</h6>
+                  <p class="text-muted">info@example.com</p>
+              </div>
+              <div class="col-6 mb-3">
+                  <h6 class="font ">Phone</h6>
+                  <p class="text-muted">123 456 789</p>
+              </div>
+            </div>
+              <h6 class="font-6 times">Activities</h6>
+              <hr class="mt-0 mb-4">
+            <div class="row pt-1">
+              <div class="col-6 mb-3">
+                  <a href="" class="u font-5"><h6 class="font roboto">Recent</h6></a>
+              </div>
+              <div class="col-6 mb-3">
+                  <a href="" class="u font-5"><h6 class="font roboto">Most Viewed</h6></a>
+              </div>
+            </div><br>
+            <div class="d-flex justify-content-center font">
+                <a href="#!"><i class="fab fa-facebook-f fa-lg me-3"></i></a>
+                <a href="#!"><i class="fab fa-twitter fa-lg me-3"></i></a>
+                <a href="#!"><i class="fab fa-instagram fa-lg"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card text-center text-black font roboto pt-4" style="height: 800px;">
+        <div class="card-body">
+          <h5 class="card-title p-2 font-6 times">Dashboard</h5><hr>
+          <div class="card-text">
+            <p class="text-start"></p>
+            <div class="d-flex justify-content-center">
+            </div>
+          </div>
         </div>
       </div>
     </div>
+  </section>
+</div>  -->
 
     <!-- scripts -->
     <script src="../../static/bootstrap-5.2.1-dist/js/bootstrap.bundle.min.js"></script>

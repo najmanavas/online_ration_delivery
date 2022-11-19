@@ -1,5 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
+<section class="bg-delivery">
 <div class="container py-5">
   <div class="position-relative m-4">
     <div class="progress" style="height: 1px">
@@ -19,7 +20,7 @@
       style="width: 2rem; height: 2rem"
     >
       1
-      <p class="text-black p-2"><b>Delivery</b></p>
+      <p class="text-black p-2 times"><b>Delivery</b></p>
     </button>
     <button
       type="button"
@@ -27,7 +28,7 @@
       style="width: 2rem; height: 2rem"
     >
       2
-      <p class="text-muted p-2"><b>payment</b></p>
+      <p class="text-muted p-2 times"><b>payment</b></p>
     </button>
     <button
       type="button"
@@ -35,7 +36,7 @@
       style="width: 2rem; height: 2rem"
     >
       3
-      <p class="text-muted p-2"><b>Summary</b></p>
+      <p class="text-muted p-2 times"><b>Summary</b></p>
     </button>
   </div>
   <br />
@@ -51,14 +52,17 @@
     <div class="card-body">
       <div class="card-title font times">
         <p><b>Name </b></p>
+      </div>
         <div class="card-text times font-5">
           <p>Address</p>
           <p>Phone Number</p>
           <button class="btn btn-info grey font-1" type="button">EDIT</button>
+          <div class="card-text text-center">
+            <a href="{% url 'core:payment' %}"><button class="btn btn-primary font roboto">Deliver To This Address</button></a>
+          </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
-
+</section>
 {% endblock content %}

@@ -5,20 +5,21 @@ from django.views import generic as views
 from django.contrib.auth import forms as auth_forms
 from django.contrib import messages
 from user import forms as user_form
+from user import models as user_models
 # from user import models
 
 USER = get_user_model()
 
 # UserCreateView
 class UserCreateView(views.CreateView):
-    template_name = "registration/signup.html"
+    template_name = "registration/sign_up.html"
     form_class = user_form.UserRegisterform
     success_url = reverse_lazy("user:user_login")
 
 # user login
 class UserLoginView(views.View):
     form_class = auth_forms.AuthenticationForm
-    success_url = reverse_lazy("core:home")
+    success_url = reverse_lazy("core:product_purchase")
     template_name = "registration/login.html"
 
     def get(self, request):
@@ -51,3 +52,43 @@ class UserLogoutView(views.View):
         logout(request)
         messages.info(request,"Logged Out Successfully..")
         return render(request,self.template_name)
+
+
+# view card details
+class CardDetailView(views.TemplateView):
+    template_name="registration/card_details.html"
+
+#----------------------- profile-------------
+
+class ProfileCreateView(views.CreateView):
+    template_name = "user/profile_create.html"
+    model = user_models.ProfileModel
+    form_class = user_form.ProfileForm
+    success_url = reverse_lazy("user:profile_detail")
+
+# profile updateview
+class ProfileUpdateView(views.UpdateView):
+    template_name = "user/profile_update.html"
+    model = user_models.ProfileModel
+    form_class = user_form.ProfileForm
+    success_url = reverse_lazy("user:profile_detail")
+
+class ProfileDetailView(views.TemplateView):
+    template_name = "user/profile_detail.html"
+    model = user_models.ProfileModel
+    context_object_name = "profile"
+
+
+
+
+
+# class ProfileView(views.ListView):
+#     template_name="user/profile.html"
+#     context_object_name="Profiles"
+
+    
+# delete feedback view
+class ProfileDeleteView(views.DeleteView):
+    template_name="user/Profile_delete.html"
+    model=user_models.ProfileModel
+    success_url=reverse_lazy("user:profile")

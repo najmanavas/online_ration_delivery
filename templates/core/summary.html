@@ -21,7 +21,7 @@
       style="width: 2rem; height: 2rem"
     >
       1
-      <p class="text-muted p-2"><b>Delivery</b></p>
+      <p class="text-muted p-2 times"><b>Delivery</b></p>
     </button>
 
     <button
@@ -30,7 +30,7 @@
       style="width: 2rem; height: 2rem"
     >
       2
-      <p class="text-muted p-2"><b>payment</b></p>
+      <p class="text-muted p-2 times"><b>payment</b></p>
     </button>
 
     <button
@@ -39,7 +39,7 @@
       style="width: 2rem; height: 2rem"
     >
       3
-      <p class="text-black p-2"><b>Summary</b></p>
+      <p class="text-black p-2 times"><b>Summary</b></p>
     </button>
   </div>
   <br />
@@ -58,8 +58,8 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="card">
+  </div><br>
+  <div class="card bg-card">
     <div class="card-body">
       <div class="card-title font-6 roboto">
         <p>Delivery Details</p><hr>
@@ -70,18 +70,18 @@
         </div>
       </div>
     </div>
-  </div>
-  <div class="card">
+  </div><br>
+  <div class="card bg-card">
     <div class="card-body">
       <div class="card-title font-6 roboto">
-        <p>payment Mode</p>
+        <p>Payment Mode</p>
         <div class="card-text font poppins">
           <p>----------</p>
         </div>
       </div>
     </div>
-  </div>
-  <div class="card">
+  </div><br>
+  <div class="card bg-card">
     <div class="card-body">
       <div class="card-title font-6 roboto">
         <p>Price Details</p>
@@ -93,9 +93,9 @@
   </div>
   <br />
   <div class="text-center">
-    <button class="btn btn-primary font-4 roboto" type="button">
+    <a href="{% url 'core:success' %}"><button class="btn btn-primary font-4 roboto" type="button">
       Place Order
-    </button>
+    </button></a>
   </div>
 </div>
 </body>

@@ -1,12 +1,12 @@
 {% extends "base.html" %} {% block content %}
-<div class="container-fluid bg-light vh-100">
+<div class="container-fluid vh-100 gradient-custom">
   <div class="row justify-content-center align-items-center h-100">
     <div class="col-lg-6">
       <div class="card shadow">
-        <div class="card-body">
-          <h5 class="card-title">Logged out successfully!</h5>
-          <p class="card-text">
-            If you want to login again
+        <div class="card-body font-6 poppins bg-dark text-white">
+          <p class="card-title text-center fw-bold">Logged out successfully!</p>
+          <p class="card-text text-center font-5 roboto">
+            If you want to Login again
             <a class="link-primary" href="{% url 'user:user_login' %}">click here</a>
           </p>
         </div>

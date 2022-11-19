@@ -104,45 +104,21 @@
         <p class="font text-center times"><b>SELECT YOUR CARD TYPE :-</b></p>
         <hr />
         <div class="row row-cols-md-4 g-4">
-          <div class="col">
-            <div class="card h-0">
-              <div class="card-body bg-light font">
-                <a href="{% url 'core:choose_action' %}"><b>White Card</b></a>
-                <p class="card-text roboto">Non – Priority.</p>
+          {% for category in categories %}
+          <a href="{% url 'core:product_by_card_category' category.id %}" class="text-center u">
+            <div class="col">
+              <div class="card h-0 card-bg">
+                <div class="card-body font">
+                  <p><b class="cl-black">{{category.name}}</b></p>
+                  <p class="card-text roboto">{{category.subject}}</p>
+                </div>
               </div>
+            </div></a>
+          {% empty %}
+            <div class="col">
+              <p>no category found</p>
             </div>
-          </div>
-          <div class="col">
-            <div class="card h-0">
-              <div class="card-body bg-warning font">
-                <a href="{% url 'core:choose_action' %}"><b>Yellow Card</b></a>
-                <p class="card-text roboto">
-                  Most economically backward section of society. Antyodaya Anna
-                  Yojana Beneficiaries.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-0">
-              <div class="card-body bg-color-card font">
-                <a href="{% url 'core:choose_action' %}"><b>Pink Card</b></a>
-                <p class="card-text roboto">
-                  Priority or Below Poverty Line (BPL).
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card h-0">
-              <div class="card-body bg-info font">
-                <a href="{% url 'core:choose_action' %}"><b>Blue Card</b></a>
-                <p class="card-text roboto">
-                  Non – Priority subsidy or Above Poverty Line (APL).
-                </p>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
       </div>
     </section>

@@ -1,44 +1,95 @@
 {% extends "base.html" %} {% block content %}
-<!-- <div class="container py-5">
-  <div class="card">
-      <div class="card-body">
-          <div>
-              <h5 class="card-title">Enter the Details :-</h5>
-              <p class="card-text">Ration Card Number :</p>
-              <p class="card-text">Name :</p>
-              <p class="card-text">Phone Number :</p>
-              <p class="card-text">Enter OTP :</p>
-              <label class="btnprimary">0</label>
-              <label class="btnprimary">0</label>
-              <label class="btnprimary">0</label>
-              <label class="btnprimary">0</label>
-              <label class="btnprimary">0</label>
+
+
+  <section class="gradient-custom">
+    <div class="container py-5 h-100 text-white font-5">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-12 col-lg-9 ">
+          <div class="card bg-dark shadow-2-strong card-registration" style="border-radius: 15px;">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 text-center poppins"><b>SignUp</b></h3>
+              <form>
+                <div class="row">
+                  <div class="form-outline">
+                    <label class="form-label" for="firstName">Ration Card Number : </label>
+                    <input type="text" id="cardName" class="form-control form-control-lg" />
+                  </div>
+                </div><br>
+                <div class="row">
+                  <div class="form-outline">
+                    <label class="form-label" for="lastName">Name :</label>
+                    <input type="text" id="Name" class="form-control form-control-lg" /> 
+                  </div>
+                </div><br>
+                <div class="row">
+                  <div class="col-md-6 mb-4 d-flex align-items-center">
+                    <div class="form-outline datepicker w-100">
+                      <label for="birthdayDate" class="form-label">Email</label>
+                      <input type="text" class="form-control form-control-lg" id="birthdayDate" />
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <h6 class="mb-2 pb-1">Gender: </h6>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender"
+                        value="option1" checked />
+                      <label class="form-check-label" for="femaleGender">Female</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender"
+                        value="option2" />
+                      <label class="form-check-label" for="maleGender">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                      <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender"
+                        value="option3" />
+                      <label class="form-check-label" for="otherGender">Other</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+                    <div class="form-outline">
+                      <label class="form-label" for="emailAddress">Password</label>
+                      <input type="password" id="password" class="form-control form-control-lg" />
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4 pb-2">
+                    <div class="form-outline">
+                      <label class="form-label" for="phoneNumber">Password confirmation</label>
+                      <input type="password" id="phoneNumber" class="form-control form-control-lg" placeholder="Enter the same password " /> 
+                    </div>
+                  </div>
+                  <div>
+                    <ul>
+                    <li>Your password can't be too similar to your other personal information.</li>
+                    <li>Your password must contain at least 8 characters.</li>
+                    <li>Your password can't be a commonly used password.</li>
+                    <li>Your password can't be entirely numeric.</li>
+                  </ul>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-4 pb-2">
+                    <div class="mb-3">
+                      <label class="form-label">Phone Number  </label>
+                      <input type="text" class="form-control" placeholder="1234567890">
+                    </div>
+                  </div>   
+                </div><br>
+              <div class="d-flex justify-content-between mb-3">
+                <a href="{% url 'user:user_login' %}" class="link-primary">Already have an account?</a>
+              </div>
+              <div class="text-center">
+                <button class="btn btn-primary font roboto">Signup</button>
+              </div>
+            </form>
           </div>
-          <div>
-              <label class="card-text" style="height: 50px;">For Biometric-Authentication : </label>
-              <label><i class="fa-regular fa-camera-retro"></i> |-----| </label>
-          </div>
-          <a href="{% url 'core:product_purchase' %}" ><button type="button" class="btn btn-info">Sign In</button></a>
-      </div>
-  </div>
-</div> -->
-{% extends "base.html" %} {% block content %}
-<div class="container-fluid bg-light vh-100">
-  <div class="row justify-content-center align-items-center h-100">
-    <div class="col-lg-6">
-      <div class="card shadow">
-        <div class="card-body">
-          <h1 class="card-title">Signup</h1>
-          <form action="" method="post">
-            {% csrf_token %} {{form.as_p}}
-            <div class="d-flex justify-content-between mb-3">
-              <a href="{% url 'user:user_login' %}" class="link-primary">Already have an account?</a>
-            </div>
-            <button class="btn btn-primary">Signup</button>
-          </form>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
+
+  
 {% endblock content %}

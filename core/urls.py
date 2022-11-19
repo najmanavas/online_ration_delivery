@@ -13,17 +13,18 @@ urlpatterns=[
     # product
     path("view_list/",views.ProductListView.as_view(),name="product_list"),
     path("product_purchase/",views.ProductPurchaseView.as_view(),name="product_purchase"),
+    # category
+    path("category_list/",views.CategoryListView.as_view(),name="category_list"),
+    # product by card
+    path("product_by_card_category/<int:pk>/list",views.ProductByCardCategoryView.as_view(),name="product_by_card_category"),
     # delivery
     path("product_delivery/",views.ProductDeliveryView.as_view(),name="product_delivery"),
     # add new address
     path("add_address/",views.AddAddressView.as_view(),name="add_address"),
     # product summary
     path("product_summary/",views.ProductSummaryView.as_view(),name="product_summary"),
-    # card details
-    path("card_details/",views.CardDetailView.as_view(),name="card_details"),
-    # profile
-    path("profile/",views.ProfileView.as_view(),name="profile"),
-    path("about_me/",views.AboutMeView.as_view(),name="add_details"),
     # payment
     path("payment/",views.PaymentView.as_view(),name="payment"),
+    # success
+    path("success/",views.SuccessView.as_view(),name="success"),
 ]

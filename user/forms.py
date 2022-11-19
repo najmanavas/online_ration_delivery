@@ -11,3 +11,7 @@ class UserRegisterform(UserCreationForm):
         model = USER
         fields = ["email", "username"]
 
+class ProfileForm(UserCreationForm):
+    class Meta:
+        model = USER
+        exclude = ("status","updated_on","created_on")

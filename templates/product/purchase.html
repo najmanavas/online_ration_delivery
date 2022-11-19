@@ -1,29 +1,11 @@
 {% extends 'base.html' %} 
 {% block content %}
+<body class="bg-image-action">
 <div class="container py-5">
     <p class="font-4 poppins"><b>Select the Items You Want --></b></p>
     <br>
     <table class="table table-bordered align-middle font roboto">
         <thead>
-            <tr>
-                <th>Sl No</th>
-                <th>Item                                                </th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>name</td>
-                <td><input type="number" class="form-control font "></td>
-                <td>price</td>
-                <td><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></td>
-            </tr>
-        </tbody>
-        <!-- <thead>
-            {% for product in products %}
             <tr>
                 <th>Sl No</th>
                 <th>Item</th>
@@ -33,27 +15,29 @@
             </tr>
         </thead>
         <tbody>
+            
+            {% for product in products %}
             <tr>
                 <td>{{forloop.counter}}</td>
                 <td>{{product.name}}</td>
-                <td>{{product.quantity}}</td>
+                <td><input type="number" placeholder="available quantity={{product.quantity}}" class="font-5 fst-italic"></td>
                 <td>{{product.price}}</td>
                 <td><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></td>
             </tr>
             {% empty %}
-            <div class="col">
-                <p class="font">No Product Found</p>
-            </div>
+            <tr>
+              <td colspan="4">No Products!</td>
+            </tr>
             {% endfor %}
-        </tbody> -->
+        </tbody>
     </table>
 </div>
 <div class="container py-5">
     <p class="font text-end times">TOTAL AMOUNT = -----</p>
 </div>
 <div class="container text-center py-5">
-    <a href="" ><button type="button" class="btn btn-primary font roboto">BUY NOW</button></a>
+    <a href="{% url 'core:product_delivery' %}" ><button type="button" class="btn btn-primary font roboto">BUY NOW</button></a>
 </div>
-
+</body>
 
 {% endblock content %}
