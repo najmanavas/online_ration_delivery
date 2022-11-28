@@ -1,11 +1,6 @@
 {% extends 'base.html' %}{% block content %}
 
-<section class="gradient-custom-2" style="min-height:100vh">
-  <div>
-    <a href="{% url 'core:home' %}">
-      <h1 class="poppins text-center text-white pt-5">PlayR</h1>
-    </a>
-  </div>  
+<section class="gradient-profile" style="min-height:100vh">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col col-lg-9 col-xl-7">
@@ -34,25 +29,14 @@
             </div>
             <div class="ms-3" style="margin-top: 130px">
               <h5 class="text-capitalize">{{user.profilemodel.user}}</h5>
-              <p>{{user.profilemodel.city}}Kochi</p>
+              <p>{{core.cardcategorymodel.name}}</p>
             </div>
           </div>
-          <div class="p-4 text-black" style="background-color: #f8f9fa">
-            <div class="d-flex justify-content-end text-center py-1">
-              <div class="mx-3">
-                <p class="mb-1 h5"><i class="fa-regular fa-heart"></i></p>
-                <p class="small text-muted mb-0">Favourites</p>
-              </div>              
-              <div lass="mx-3">
-                <p class="mb-1 h5">478</p>
-                <p class="small text-muted mb-0">Following</p>
-              </div>
-            </div>
-          </div>
+          <div class="card">
             <div class="card-body p-4 text-black">
-              <div class="mb-5">
-                <p class="lead fw-normal mb-1">About</p>
-                <div class="p-4" style="background-color: #f8f9fa">
+              <div class="mb-5 text-center">
+                <p class="lead fw-normal mt-5 text-center">About</p>
+                <div class="pt-1" style="background-color: #f8f9fa">
                   <p class="font-italic mb-1 text-capitalize">
                     First_name : {{user.profilemodel.first_name}}</p>
                   <p class="font-italic mb-1 text-capitalize">
@@ -61,13 +45,12 @@
                     Gender : {{user.profilemodel.gender}}</p>
                   <p class="font-italic mb-1">
                     phone_number : {{user.profilemodel.phone_number}}</p>
-                  
                 </div>
              
               </div> 
               {% else %}
                 <tr>
-                  <td colspan="4">
+                  <td colspan="5">
                     <a href="{% url 'user:profile_create' %}" class="text-light">
                     Create Profile
                     </a>
@@ -76,10 +59,10 @@
               {% endif %}                    
             </div>
           </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-{% include 'includes/footer.html' %}
 {% endblock content %}

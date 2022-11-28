@@ -19,7 +19,7 @@ class UserCreateView(views.CreateView):
 # user login
 class UserLoginView(views.View):
     form_class = auth_forms.AuthenticationForm
-    success_url = reverse_lazy("core:product_purchase")
+    success_url = reverse_lazy("core:home")
     template_name = "registration/login.html"
 
     def get(self, request):
@@ -64,7 +64,11 @@ class ProfileCreateView(views.CreateView):
     template_name = "user/profile_create.html"
     model = user_models.ProfileModel
     form_class = user_form.ProfileForm
-    success_url = reverse_lazy("user:profile_detail")
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+    
 
 # profile updateview
 class ProfileUpdateView(views.UpdateView):
@@ -79,16 +83,22 @@ class ProfileDetailView(views.TemplateView):
     context_object_name = "profile"
 
 
+# delivery
+class DeliveryDetailView(views.TemplateView):
+    template_name = "delivery/delivery.html"
+    model = user_models.AddressModel
+    context_object_name = "address"
 
+# address create
+class AddressCreateView(views.CreateView):
+    template_name="delivery/new_address.html"
+    model=user_models.AddressModel
+    form_class = user_form.AddressForm
 
-
-# class ProfileView(views.ListView):
-#     template_name="user/profile.html"
-#     context_object_name="Profiles"
-
+# address update
+class AddressUpdateView(views.UpdateView):
+    template_name = "delivery/address_update.html"
+    model = user_models.AddressModel
+    form_class = user_form.AddressForm
+    success_url = reverse_lazy("user:delivery_detail")
     
-# delete feedback view
-class ProfileDeleteView(views.DeleteView):
-    template_name="user/Profile_delete.html"
-    model=user_models.ProfileModel
-    success_url=reverse_lazy("user:profile")

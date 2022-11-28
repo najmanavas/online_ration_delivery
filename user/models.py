@@ -2,13 +2,21 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 from core import models as core_models
+from django.urls import reverse
 
 USER = settings.AUTH_USER_MODEL
 class CustomUser(AbstractUser):
     pass
 
-class AddressModel(models.Model):
+class LocationModel(models.Model):
+    lattitude = models.FloatField()
+    longitude = models.FloatField()
 
+    def __str__(self):
+        return f"{self.lattitude},{self.longitude}"
+class AddressModel(models.Model):
+    name=models.CharField(max_length=50)
+    phone_number=models.CharField(max_length=15)
     building_name = models.CharField(max_length=64)
     place = models.CharField(max_length=32)
     city = models.CharField(max_length=32)
@@ -16,6 +24,9 @@ class AddressModel(models.Model):
     state = models.CharField(max_length=32)
     country = models.CharField(max_length=24, default="India")
     postal_code = models.CharField(max_length=6)
+    location = models.ForeignKey(
+        LocationModel, on_delete=models.SET_NULL, null=True, blank=True
+    )
     status = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -37,7 +48,7 @@ class ProfileModel(models.Model):
     phone_number = models.CharField(max_length=15)
     card_type=models.ManyToManyField(core_models.CardCategoryModel, blank=True)
     email=models.EmailField(max_length=100)
-    address = models.ManyToManyField(AddressModel, blank=True)
+    address = models.ManyToManyField(AddressModel)
     user = models.OneToOneField(USER, on_delete=models.CASCADE)
     status = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
@@ -45,3 +56,8 @@ class ProfileModel(models.Model):
 
     def __str__(self):
         return f"{self.first_name} {self.last_name}".title()
+
+    def get_absolute_url(self):
+        url=reverse("user:profile_detail",kwargs={'pk':self.id})
+
+    

@@ -17,10 +17,6 @@ urlpatterns=[
     path("category_list/",views.CategoryListView.as_view(),name="category_list"),
     # product by card
     path("product_by_card_category/<int:pk>/list",views.ProductByCardCategoryView.as_view(),name="product_by_card_category"),
-    # delivery
-    path("product_delivery/",views.ProductDeliveryView.as_view(),name="product_delivery"),
-    # add new address
-    path("add_address/",views.AddAddressView.as_view(),name="add_address"),
     # product summary
     path("product_summary/",views.ProductSummaryView.as_view(),name="product_summary"),
     # payment

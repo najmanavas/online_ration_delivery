@@ -11,7 +11,12 @@ class UserRegisterform(UserCreationForm):
         model = USER
         fields = ["email", "username"]
 
-class ProfileForm(UserCreationForm):
+class ProfileForm(forms.ModelForm):
     class Meta:
-        model = USER
+        model = user_models.ProfileModel
+        exclude = ("status","updated_on","created_on","user","address")
+
+class AddressForm(forms.ModelForm):
+    class Meta:
+        model = user_models.AddressModel
         exclude = ("status","updated_on","created_on")

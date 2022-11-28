@@ -51,7 +51,7 @@ class ProductListView(views.ListView):
     form_class=ProductForm
 
 # view product purchase
-class ProductPurchaseView(views.ListView):
+class ProductPurchaseView(LoginRequiredMixin,views.ListView):
     template_name="product/purchase.html"
     model=core_models.ProductModel
     form_class=ProductForm
@@ -97,15 +97,6 @@ class FeedbackListView(views.ListView):
     context_object_name="feedbacks"
 
 
-# -----------delivery----------
-
-# address adding
-class AddAddressView(views.TemplateView):
-    template_name="delivery/new_address.html"
-
-# product delivery
-class ProductDeliveryView(views.TemplateView):
-    template_name="delivery/delivery.html"
 
 # -----------final----------
 # payment

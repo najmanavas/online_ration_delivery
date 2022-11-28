@@ -3,31 +3,33 @@
 <div class="container py-5">
   <div class="row">
     <div class="col">
-      <table>
-        <thead class="font-4 poppins">
-          <tr><br>
-            <th class="text-primary"><label class="fa-solid fa-phone"></label> Contact Details</th>
-          </tr>
-        </thead>
-        <form>
-        <tbody class="font times">
-          <tr>
-            <td class="p-2">Name :</td>
-            <td><div class="col-sm-10">
-              <input type="text" class="form-control">
-            </div>
-        </td>
-          </tr>
-          <tr>
-            <td class="p-2">Phone Number :</td>
-            <td><div class="col-sm-10">
-              <input type="text" class="form-control">
-            </div>
-        </td>
-          </tr>
-        </tbody>
-      </form>
-      </table>
+      <form action="" method="post">
+        {% csrf_token %}
+        <table>
+          <thead class="font-4 poppins">
+            <tr><br>
+              <th class="text-primary"><label class="fa-solid fa-phone"></label> Contact Details</th>
+            </tr>
+          </thead>
+          <form>
+          <tbody class="font times">
+            <tr>
+              <td class="p-2">Name :</td>
+              <td><div class="col-sm-10">
+                <input type="text" class="form-control">
+              </div>
+          </td>
+            </tr>
+            <tr>
+              <td class="p-2">Phone Number :</td>
+              <td><div class="col-sm-10">
+                <input type="text" class="form-control">
+              </div>
+          </td>
+            </tr>
+          </tbody>
+       
+        </table>
       <br />
       <table>
         <thead class="font-4 poppins">
@@ -78,8 +80,9 @@
       </table>
     </div>
     <div class="col text-end">
-        <a href="{% url 'core:product_delivery' %}"><button class="btn btn-info font roboto fst-italic">Save Address and Continue</button></a>
+      <button class="btn btn-info font roboto fst-italic" type="submit">Save Address and Continue</button>
     </div>
+  </form>
   </div>
 </div>
 

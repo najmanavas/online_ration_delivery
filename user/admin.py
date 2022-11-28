@@ -5,4 +5,6 @@ from user import models
 admin.site.register(models.CustomUser)
 admin.site.register(models.AddressModel)
 admin.site.register(models.ProfileModel)
+admin.site.register(models.LocationModel)
+
 

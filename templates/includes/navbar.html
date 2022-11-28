@@ -40,18 +40,10 @@
         <li class="nav-item">
           <a
             class="nav-link active font poppins"
-            href="{% url 'core:product_delivery' %}"
+            href="{% url 'user:product_delivery' %}"
             >Delivery</a
           >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link link-light active font-4 poppins"
-            href="{% url 'user:profile_detail' %}"
-            ><b>Profile</b></a
-          >
-        </li>
-        
+        </li>     
       </ul>
       <form class="d-flex" role="search">
         <input
@@ -67,7 +59,7 @@
       <ul class="navbar-nav me-2 mb-2 ">
         <li class="nav-item dropdown m-2">
           {% if user.is_authenticated %}
-          <a class="nav-link active font-5 mt-4 p-2 poppins" href="{% url 'user:profile_detail' %}" >
+          <a class="nav-link active font-5 mt-4 p-2 poppins" href="{% url 'user:profile_detail' user.profilemodel.id %}" >
             <b>{{user}}</b>
           </a>
           {% else %}

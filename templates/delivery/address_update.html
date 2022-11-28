@@ -1,0 +1,90 @@
+{% extends 'base.html' %} 
+{% block content %}
+
+<div class="container py-5">
+    <div class="row">
+      <div class="col">
+        <table>
+          <thead class="font-4 poppins">
+            <tr><br>
+              <th class="text-primary"><label class="fa-solid fa-phone"></label> Contact Details</th>
+            </tr>
+          </thead>
+          <form>
+          <tbody class="font times">
+            <tr>
+              <td class="p-2">Name :</td>
+              <td><div class="col-sm-10">
+                <input type="text" class="form-control">
+              </div>
+          </td>
+            </tr>
+            <tr>
+              <td class="p-2">Phone Number :</td>
+              <td><div class="col-sm-10">
+                <input type="text" class="form-control">
+              </div>
+          </td>
+            </tr>
+          </tbody>
+        </form>
+        </table>
+        <br />
+        <table>
+          <thead class="font-4 poppins">
+            <tr><br>
+              <th class="text-primary"><label class="fa-solid fa-location-dot"></label> Address</th>
+            </tr>
+          </thead>
+          <tbody class="font times">
+            <tr>
+              <td class="p-2">House No / Building Name :</td>
+              <td><div class="col-sm-10">
+                <input type="text" class="form-control">
+              </div>
+          </td>
+            </tr>
+            <tr>
+              <td class="p-2">Road Name / Area / Colony :</td>
+              <td><div class="col-sm-10">
+                <input type="text" class="form-control">
+              </div>
+          </td>
+            </tr>
+            <tr>
+              <td class="p-2">Pincode :</td>
+              <td><div class="col-sm-10">
+                <input type="text" class="form-control">
+              </div></td>
+            </tr>
+            <tr>
+              <td class="p-2">City :</td>
+              <td><div class="col-sm-10">
+                <input type="text" class="form-control">
+              </div></td>
+            </tr>
+            <tr>
+              <td class="p-2">State :</td>
+              <td><div class="col-sm-10">
+                <input type="text" class="form-control">
+              </div></td>
+            </tr>
+            <tr>
+              <td class="p-2">Nearby Locations(Optional) :</td>
+              <td><div class="col-sm-10">
+                <input type="text" class="form-control">
+              </div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col text-end">
+          <a href="{% url 'core:product_delivery' %}"><button class="btn btn-info font roboto fst-italic">Save Address and Continue</button></a>
+      </div>
+    </div>
+  </div>
+
+
+
+
+{% endblock content %}
