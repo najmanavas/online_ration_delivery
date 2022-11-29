@@ -14,9 +14,9 @@ urlpatterns=[
     path("view_list/",views.ProductListView.as_view(),name="product_list"),
     path("product_purchase/",views.ProductPurchaseView.as_view(),name="product_purchase"),
     # category
-    path("category_list/",views.CategoryListView.as_view(),name="category_list"),
+    path("card_list/",views.CardListView.as_view(),name="card_list"),
     # product by card
-    path("product_by_card_category/<int:pk>/list",views.ProductByCardCategoryView.as_view(),name="product_by_card_category"),
+    path("product_by_card/<int:pk>/list",views.ProductByCardView.as_view(),name="product_by_card"),
     # product summary
     path("product_summary/",views.ProductSummaryView.as_view(),name="product_summary"),
     # payment

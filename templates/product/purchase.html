@@ -20,7 +20,7 @@
             <tr>
                 <td>{{forloop.counter}}</td>
                 <td>{{product.name}}</td>
-                <td><input type="number" placeholder="available quantity={{product.quantity}}" class="font-5 fst-italic"></td>
+                <td>{{product.quantity}}</td>
                 <td>{{product.price}}</td>
                 <td><input class="form-check-input mt-0" type="checkbox" value="" aria-label="Checkbox for following text input"></td>
             </tr>
@@ -36,7 +36,7 @@
     <p class="font text-end times">TOTAL AMOUNT = -----</p>
 </div>
 <div class="container text-center py-5">
-    <a href="{% url 'core:product_delivery' %}" ><button type="button" class="btn btn-primary font roboto">BUY NOW</button></a>
+    <a href="{% url 'user:product_delivery' %}" ><button type="button" class="btn btn-primary font roboto">BUY NOW</button></a>
 </div>
 </body>
 

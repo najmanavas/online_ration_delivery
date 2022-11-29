@@ -48,17 +48,20 @@
     >
   </div>
   <br />
-  {% if user.addressmodel %}
+  {% if user.profilemodel %}
   <div class="card">
     <div class="card-body">
       <div class="card-title font times">
-        <p><b>{{user.addressmodel.name}}</b></p>
+        <p><b>{{user.profilemodel.first_name}} {{user.profilemodel.last_name}}</b></p>
       </div>
         <div class="card-text times font-5">
-          <p>{{user.addressmodel.address}}</p>
-          <p>{{user.addressmodel.phone_number}}</p>
-          <a href=""><button class="btn btn-info grey font-1" type="button">EDIT</button></a>
+          <p>{{user.profilemodel.address}}</p>
+          <p>{{user.profilemodel.phone_number}}</p>
+          <a href=""><button class="btn btn-info grey font-1">EDIT</button></a>
         </div>
+    </div>
+    <div class="text-end m-3 font p-2">
+      <a href="{% url 'core:payment' %}" ><button class="btn btn-primary">Deliver To This Address</button></a>
     </div>
     {% endif %}    
   </div>

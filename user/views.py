@@ -94,7 +94,11 @@ class AddressCreateView(views.CreateView):
     template_name="delivery/new_address.html"
     model=user_models.AddressModel
     form_class = user_form.AddressForm
-
+    
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+        
 # address update
 class AddressUpdateView(views.UpdateView):
     template_name = "delivery/address_update.html"

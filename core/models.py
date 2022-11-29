@@ -24,30 +24,48 @@ class UnitModel(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-
-# category of cards
-class CardCategoryModel(models.Model):
+# product category model
+class CategoryModel(models.Model):
     name=models.CharField(max_length=64)
-    subject=models.CharField(max_length=500)
+    parent=models.ForeignKey("self",on_delete=models.SET_NULL,null=True,blank=True)
     status=models.BooleanField(default=True)
     created_on=models.DateTimeField(auto_now_add=True)
     updated_on=models.DateTimeField(auto_now=True)
     def __str__(self):
         return f"{self.name}"
 
+# stock model
+class StockModel(models.Model):
+    quantity=models.FloatField(max_length=100)
+    def __str__(self):
+        return f"{self.quantity}"
+
 # product model
 class ProductModel(models.Model):
     name=models.CharField(max_length=64)
     price=models.FloatField(max_length=100)
-    quantity=models.FloatField(max_length=100)
     unit=models.CharField(max_length=5)
-    category=models.ManyToManyField(CardCategoryModel)
+    category=models.ManyToManyField(CategoryModel)
     image=models.ImageField(upload_to="product/image",default="default/product.png")
     status=models.BooleanField(default=True)
     created_on=models.DateTimeField(auto_now_add=True)
     updated_on=models.DateTimeField(auto_now=True)
     def __str__(self):
         return f"{self.name}"
+
+
+# category of cards
+class CardModel(models.Model):
+    name=models.CharField(max_length=64)
+    subject=models.CharField(max_length=500)
+    product=models.ManyToManyField(ProductModel)
+    quantity=models.ManyToManyField(StockModel)
+    status=models.BooleanField(default=True)
+    created_on=models.DateTimeField(auto_now_add=True)
+    updated_on=models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return f"{self.name}"
+
 
 # #  cart
 # class CartModel(models.Model):

@@ -10,7 +10,7 @@ from django.contrib import messages
 # home view
 class HomeView(views.TemplateView):
     template_name="core/home.html"
-    extra_context={"categories":core_models.CardCategoryModel.objects.all()}
+    extra_context={"categories":core_models.CardModel.objects.all()}
 
 # about_us view
 class AboutView(views.TemplateView):
@@ -26,7 +26,7 @@ class ActionView(views.TemplateView):
 # ----------product----------
 
 # view pdts wrt card
-class ProductByCardCategoryView(views.ListView):
+class ProductByCardView(views.ListView):
     template_name="core/actions.html"
     model=core_models.ProductModel
     context_object_name="products"
@@ -38,9 +38,9 @@ class ProductByCardCategoryView(views.ListView):
 
 
 # card category list
-class CategoryListView(views.ListView):
+class CardListView(views.ListView):
     template_name="core/home.html"
-    model=core_models.CardCategoryModel
+    model=core_models.CardModel
     context_object_name="categories"
     
 

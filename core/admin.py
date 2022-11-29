@@ -4,4 +4,7 @@ from core import models
 admin.site.register(models.FeedbackModel)
 admin.site.register(models.UnitModel)
 admin.site.register(models.ProductModel)
-admin.site.register(models.CardCategoryModel)
+admin.site.register(models.CategoryModel)
+admin.site.register(models.CardModel)
+admin.site.register(models.StockModel)
+
