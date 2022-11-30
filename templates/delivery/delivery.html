@@ -55,7 +55,11 @@
         <p><b>{{user.profilemodel.first_name}} {{user.profilemodel.last_name}}</b></p>
       </div>
         <div class="card-text times font-5">
-          <p>{{user.profilemodel.address}}</p>
+          {% for address in user.profilemodel.address.all %}
+          <p>{{address}}</p>
+          {% empty %}
+          <a href="" class="btn btn-primary">Create address</a>
+          {% endfor %}
           <p>{{user.profilemodel.phone_number}}</p>
           <a href=""><button class="btn btn-info grey font-1">EDIT</button></a>
         </div>

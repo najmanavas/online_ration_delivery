@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-color">
   <div class="container-fluid">
-    <img src="/static/css/logo1.png" style="height:40px; width:40px;"  />
+    <img src="/static/css/logo1.png" style="height: 40px; width: 40px" />
     <a class="navbar-brand color-primary p-4" href="#"><b>ORD</b> </a>
     <button
       class="navbar-toggler"
@@ -17,7 +17,7 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <a
-            class="nav-link link-light active font-4 poppins"
+            class="nav-link link-light active font poppins"
             aria-current="page"
             href="{% url 'core:home' %}"
             ><b>Home</b></a
@@ -25,64 +25,91 @@
         </li>
         <li class="nav-item">
           <a
-            class="nav-link link-light active font-4 poppins"
+            class="nav-link link-light active font poppins"
             href="{% url 'core:feedback_list' %}"
             ><b>Feedback</b></a
           >
         </li>
         <li class="nav-item">
           <a
-            class="nav-link link-light active font-4 poppins"
+            class="nav-link link-light active font poppins"
             href="{% url 'core:about_us' %}"
             ><b>About US</b></a
           >
         </li>
         <li class="nav-item">
           <a
-            class="nav-link active font poppins"
+            class="nav-link active poppins"
             href="{% url 'user:product_delivery' %}"
             >Delivery</a
           >
-        </li>     
+        </li>
       </ul>
-      <form class="d-flex" role="search">
+      <form action="{% url 'core:product_search' %}" class="d-flex" role="search">
         <input
           class="form-control me-2 fst-italic mt-4"
           type="search"
           placeholder="Search"
           aria-label="Search"
+          name="q"
         />
-        <button class="btn btn-outline-primary mt-3 m-2" style="height:50px;" type="submit">
-          Search
-        </button>
-      </form> 
-      <ul class="navbar-nav me-2 mb-2 ">
+        <button class="btn btn-outline-primary mt-3 m-2" type="submit">Search</button>
+      </form>
+      <ul class="navbar-nav me-2 mb-2">
         <li class="nav-item dropdown m-2">
-          {% if user.is_authenticated %}
-          <a class="nav-link active font-5 mt-4 p-2 poppins" href="{% url 'user:profile_detail' user.profilemodel.id %}" >
+          {% if user.is_authenticated %} {% if user.profilemodel %}
+          <a
+            class="nav-link active font-1 mt-4 p-2 poppins"
+            href="{% url 'user:profile_detail' user.profilemodel.id %}"
+          >
             <b>{{user}}</b>
           </a>
           {% else %}
-          <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <a
+            class="nav-link active font-7 mt-4 p-2 poppins"
+            href="{% url 'user:profile_create' %}"
+          >
+            <b>{{user}}</b>
+          </a>
+          {% endif %} {% else %}
+          <a
+            class="nav-link dropdown-toggle"
+            href=""
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
             <i class="fa-regular fa-user fa-2x"></i>
           </a>
           <ul class="dropdown-menu me-2">
-            <li><a class="dropdown-item" href="{% url 'user:user_login' %}">Login</a></li>
-            <li><a class="dropdown-item" href="{% url 'user:user_signup' %}">Signup</a></li>
+            <li>
+              <a class="dropdown-item" href="{% url 'user:user_login' %}"
+                >Login</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'user:user_signup' %}"
+                >Signup</a
+              >
+            </li>
           </ul>
-          {% endif %} 
+          {% endif %}
         </li>
         <li class="nav-item">
           {% if user.is_authenticated %}
-          <a href="{% url 'user:user_logout' %}" class="nav-link active p-2 font-7 roboto mt-4 "><div class="row mt-4">
-            <b>Logout</b>
+          <a
+            href="{% url 'user:user_logout' %}"
+            class="nav-link active p-2 font-7 roboto mt-4"
+            ><div class="row mt-4">
+              Logout
             </div>
             <div class="row mb-2">
               <i class="fa-solid fa-right-from-bracket"></i>
-            </div> </a> 
+            </div>
+          </a>
           {% endif %}
         </li>
-    </ul>
+      </ul>
     </div>
   </div>
 </nav>

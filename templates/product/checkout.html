@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container py-5 m-5">
+    <i><h2>CHECK OUT</h2></i>
+    <div class="row">
+      <div class="prod">
+      </div>
+      <div class="column">
+
+        {% for item in cart.items %}
+
+        <p>{{item}}<br>&pound;{{item.product.price}}</p>
+        <p>{{item.description}}{{item.product.description}}</p>
+        <p>size:{{item.size}}{{item.product.size}}</p>
+
+        {% empty %}
+
+        <li>Nothing Found!</li>
+
+        {% endfor %}
+        
+  <ul class="dropdown-menu">
+    <li class="dropdown-item d-flex justify-content-between fw-bold">
+      <span>Item</span>
+      <span>Qty</span>
+    </li>
+    {% for item in cart.items %}
+    <li class="dropdown-item d-flex justify-content-between">
+      <a
+        class="link-primary"
+        href="{% url 'core:product_detail' item.product.id %}"
+      >
+        {{item.product}}
+      </a>
+      <span class="fw-bold">{{item.quantity}}</span>
+    </li>
+    {% empty %}
+    <li>Nothing Found!</li>
+    {% endfor %}
+    <li class="dropdown-item d-flex justify-content-between fw-bold text-bg-primary">
+      <a href="{% url 'core:cart_checkout' %}" class="link-light">Checkout</a>
+    </li>
+  </ul>   
+    </div>
+  </div>
+  <div class="text-center">
+    <button class="checkout" id="checkout"><a href="{% url 'user:product_delivery' %}">Checkout</button></a>
+  </div>
+  </div>
+
+</Body>
+
+
+
+
+{% endblock content %}

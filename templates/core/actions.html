@@ -8,14 +8,15 @@
           <td class="font-2 poppins"><b>CARD TYPE :- {{category.name}}</b></td>
           <td>
             {% if user.is_authenticated %}
-            <a href="{% url 'core:product_purchase' %}"><button class="btn btn-primary font roboto">Purchase
+            <a href="{% url 'core:product_purchase' card.id %}"><button class="btn btn-primary font roboto">Purchase
                 Item</button></a>
             {% else %}
             <a href="{% url 'user:user_login' %}"><button class="btn btn-primary font roboto">Purchase Item</button></a>
             {% endif %} 
           </td>
           <!--offcanvas-->
-          <td><a data-bs-toggle="offcanvas" href="#offcanvasExample" aria-controls="offcanvasExample"><button
+          <td>
+            <a data-bs-toggle="offcanvas" href="#offcanvasExample" aria-controls="offcanvasExample"><button
                 type="button" class="btn btn-primary font roboto">Other Actions</button></a>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasExample"
               aria-labelledby="offcanvasExampleLabel">
@@ -27,17 +28,20 @@
                 <div class="card font poppins">
                   <div class="card-body">
                     <div class="card-text"><a href="{% url 'user:card_details' %}" class="u">
-                        <p>View Ration-Card details
-                      </a></p>
+                        View Ration-Card details
+                      </a>
                     </div>
                   </div>
                 </div>
                 <div class="card font poppins">
                   <div class="card-body">
-                    <div class="card-text"><a href="" class="u">
-                        <p>Other available offers
+                    <div class="card-text">
+                      <a href="" class="u">
+                        
+                        Other available offers
                       </a><span class="badge bg-primary rounded-pill">1</span>
-                    </p>
+                    
+                      
                     </div>
                   </div>
                 </div>
@@ -55,7 +59,7 @@
             <div class="card-body">
               <h5 class="card-title font-4 roboto">{{product.name}}</h5>
               <p class="card-text font times">Price: {{product.price}}</p>
-              <p class="card-text font poppins" style="height: 50px;">Available Quantity: {{product.quantity}} {{product.unit}}
+              <p class="card-text font-1 poppins" style="height: 50px;">Available Quantity: {{product.stockmodel.quantity}} {{product.unit.symbol}}
               </p>
               <p class="card-text text-muted fst-italic">
                 Last updated: {{product.updated_on|date}}
